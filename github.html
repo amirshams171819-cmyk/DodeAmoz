@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>CodeLearn | مطالب برنامه‌نویسی</title>
+
+  <style>
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Tahoma, Arial, sans-serif;
+      background: #080d1a;
+      color: #f4f7ff;
+      line-height: 1.8;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* NAVBAR */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+
+      background: rgba(8, 13, 26, 0.88);
+      backdrop-filter: blur(15px);
+
+      border-bottom: 1px solid #1d2940;
+
+      padding: 18px 7%;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 25px;
+      font-weight: bold;
+    }
+
+    .logo span {
+      color: #38bdf8;
+    }
+
+    nav {
+      display: flex;
+      gap: 28px;
+    }
+
+    nav a {
+      color: #9ba8bd;
+      font-size: 14px;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #38bdf8;
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 72vh;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      text-align: center;
+
+      padding: 80px 20px;
+
+      background:
+        radial-gradient(
+          circle at 50% 20%,
+          #07598555,
+          transparent 38%
+        );
+    }
+
+    .hero-content {
+      max-width: 850px;
+    }
+
+    .badge {
+      display: inline-block;
+
+      color: #38bdf8;
+
+      border: 1px solid #164e63;
+
+      padding: 6px 15px;
+
+      border-radius: 50px;
+
+      font-size: 12px;
+
+      margin-bottom: 25px;
+    }
+
+    .hero h1 {
+      font-size: clamp(42px, 7vw, 75px);
+
+      line-height: 1.2;
+
+      margin-bottom: 25px;
+    }
+
+    .hero h1 span {
+      color: #38bdf8;
+    }
+
+    .hero p {
+      color: #9ba8bd;
+
+      font-size: 18px;
+
+      max-width: 650px;
+
+      margin: auto;
+    }
+
+    /* CONTAINER */
+
+    .container {
+      max-width: 1100px;
+
+      margin: auto;
+
+      padding: 90px 25px;
+    }
+
+    .section-label {
+      color: #38bdf8;
+
+      font-size: 12px;
+
+      letter-spacing: 3px;
+
+      margin-bottom: 8px;
+    }
+
+    .section-title {
+      font-size: 34px;
+
+      margin-bottom: 10px;
+    }
+
+    .section-description {
+      color: #8997ad;
+
+      margin-bottom: 35px;
+    }
+
+    /* ARTICLES */
+
+    .articles {
+      display: grid;
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
+      gap: 20px;
+    }
+
+    .article {
+      background: #10192b;
+
+      border: 1px solid #1d2b44;
+
+      border-radius: 18px;
+
+      padding: 27px;
+
+      transition: 0.3s;
+    }
+
+    .article:hover {
+      transform: translateY(-6px);
+
+      border-color: #2b718e;
+    }
+
+    .article-category {
+      color: #38bdf8;
+
+      font-size: 12px;
+
+      margin-bottom: 15px;
+    }
+
+    .article h3 {
+      font-size: 20px;
+
+      margin-bottom: 10px;
+    }
+
+    .article p {
+      color: #8997ad;
+
+      font-size: 14px;
+
+      margin-bottom: 20px;
+    }
+
+    .read {
+      color: #38bdf8;
+
+      font-size: 13px;
+
+      font-weight: bold;
+    }
+
+    /* CATEGORIES */
+
+    .categories {
+      display: flex;
+
+      gap: 12px;
+
+      flex-wrap: wrap;
+    }
+
+    .category {
+      background: #10192b;
+
+      border: 1px solid #1d2b44;
+
+      padding: 10px 18px;
+
+      border-radius: 50px;
+
+      color: #aab5c8;
+
+      font-size: 13px;
+
+      transition: 0.3s;
+    }
+
+    .category:hover {
+      border-color: #38bdf8;
+
+      color: #38bdf8;
+    }
+
+    /* ABOUT */
+
+    .about {
+      background: #10192b;
+
+      border: 1px solid #1d2b44;
+
+      border-radius: 22px;
+
+      padding: 45px;
+    }
+
+    .about p {
+      color: #8997ad;
+
+      max-width: 750px;
+    }
+
+    /* FOOTER */
+
+    footer {
+      border-top: 1px solid #1d2940;
+
+      text-align: center;
+
+      padding: 30px 20px;
+
+      color: #66748b;
+
+      font-size: 13px;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 750px) {
+
+      nav {
+        display: none;
+      }
+
+      .hero {
+        min-height: 65vh;
+      }
+
+      .hero h1 {
+        font-size: 42px;
+      }
+
+      .articles {
+        grid-template-columns: 1fr;
+      }
+
+      .section-title {
+        font-size: 29px;
+      }
+
+      .about {
+        padding: 30px;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+  <!-- NAVBAR -->
+
+  <header>
+
+    <a href="#" class="logo">
+      Code<span>Learn</span>
+    </a>
+
+    <nav>
+
+      <a href="#articles">
+        مطالب
+      </a>
+
+      <a href="#categories">
+        دسته‌بندی‌ها
+      </a>
+
+      <a href="#about">
+        درباره من
+      </a>
+
+    </nav>
+
+  </header>
+
+
+
+  <!-- HERO -->
+
+  <section class="hero">
+
+    <div class="hero-content">
+
+      <div class="badge">
+        💻 برنامه‌نویسی، تکنولوژی و تجربه
+      </div>
+
+      <h1>
+
+        دنیای
+        <span>کدنویسی</span>
+        از اینجا شروع می‌شود.
+
+      </h1>
+
+      <p>
+
+        مطالب ساده و کاربردی درباره برنامه‌نویسی،
+        توسعه وب، ابزارهای برنامه‌نویسی و چیزهایی
+        که در مسیر یادگیری تجربه می‌کنم.
+
+      </p>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- ARTICLES -->
+
+  <section class="container" id="articles">
+
+    <div class="section-label">
+      ARTICLES
+    </div>
+
+    <h2 class="section-title">
+      جدیدترین مطالب
+    </h2>
+
+    <p class="section-description">
+      آخرین مقاله‌ها و نوشته‌های برنامه‌نویسی
+    </p>
+
+
+    <div class="articles">
+
+
+      <article class="article">
+
+        <div class="article-category">
+          HTML
+        </div>
+
+        <h3>
+          HTML چیست؟
+        </h3>
+
+        <p>
+          آشنایی با HTML و نقش آن در ساخت
+          صفحات وب، از مفاهیم پایه تا اولین صفحه.
+        </p>
+
+        <a href="#" class="read">
+          خواندن مقاله ←
+        </a>
+
+      </article>
+
+
+
+      <article class="article">
+
+        <div class="article-category">
+          Git & GitHub
+        </div>
+
+        <h3>
+          GitHub چیست و چه کاربردی دارد؟
+        </h3>
+
+        <p>
+          با GitHub آشنا شو و یاد بگیر چطور
+          پروژه‌های برنامه‌نویسی خودت را مدیریت کنی.
+        </p>
+
+        <a href="#" class="read">
+          خواندن مقاله ←
+        </a>
+
+      </article>
+
+
+
+      <article class="article">
+
+        <div class="article-category">
+          Python
+        </div>
+
+        <h3>
+          چرا Python؟
+        </h3>
+
+        <p>
+          بررسی زبان Python و اینکه چرا یکی از
+          محبوب‌ترین زبان‌های برنامه‌نویسی دنیاست.
+        </p>
+
+        <a href="#" class="read">
+          خواندن مقاله ←
+        </a>
+
+      </article>
+
+
+    </div>
+
+  </section>
+
+
+
+  <!-- CATEGORIES -->
+
+  <section class="container" id="categories">
+
+    <div class="section-label">
+      CATEGORIES
+    </div>
+
+    <h2 class="section-title">
+      دسته‌بندی مطالب
+    </h2>
+
+    <p class="section-description">
+      مطالب مورد علاقه‌ات را پیدا کن.
+    </p>
+
+
+    <div class="categories">
+
+      <a href="#" class="category">
+        HTML
+      </a>
+
+      <a href="#" class="category">
+        CSS
+      </a>
+
+      <a href="#" class="category">
+        JavaScript
+      </a>
+
+      <a href="#" class="category">
+        Python
+      </a>
+
+      <a href="#" class="category">
+        Git & GitHub
+      </a>
+
+      <a href="#" class="category">
+        Web Development
+      </a>
+
+      <a href="#" class="category">
+        ابزارهای برنامه‌نویسی
+      </a>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- ABOUT -->
+
+  <section class="container" id="about">
+
+    <div class="about">
+
+      <div class="section-label">
+        ABOUT
+      </div>
+
+      <h2 class="section-title">
+        درباره CodeLearn
+      </h2>
+
+      <p>
+
+        CodeLearn یک فضای شخصی برای نوشتن و
+        به اشتراک گذاشتن مطالب مرتبط با برنامه‌نویسی
+        و تکنولوژی است.
+
+        هدف این سایت ساده است:
+        یاد بگیریم، تجربه کنیم و چیزهایی که یاد گرفتیم
+        را با دیگران به اشتراک بگذاریم.
+
+      </p>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    © 2026 CodeLearn
+
+    <br>
+
+    ساخته شده برای یادگیری، تجربه و ساختن.
+
+  </footer>
+
+
+</body>
+
+</html>
