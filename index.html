@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>CodeLearn | آموزش برنامه‌نویسی</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Tahoma, Arial, sans-serif;
+      background: #f5f7fb;
+      color: #172033;
+      line-height: 1.8;
+    }
+
+    header {
+      background: #ffffff;
+      padding: 18px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 15px #00000010;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      color: #2563eb;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #555;
+      margin-right: 20px;
+    }
+
+    nav a:hover {
+      color: #2563eb;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 90px 20px;
+      background: linear-gradient(135deg, #eaf2ff, #ffffff);
+    }
+
+    .hero h1 {
+      font-size: 45px;
+      margin-bottom: 15px;
+    }
+
+    .hero h1 span {
+      color: #2563eb;
+    }
+
+    .hero p {
+      color: #667085;
+      font-size: 18px;
+      max-width: 650px;
+      margin: auto;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 25px;
+      padding: 12px 25px;
+      background: #2563eb;
+      color: white;
+      border-radius: 10px;
+      text-decoration: none;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 70px 20px;
+    }
+
+    .title {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .title h2 {
+      font-size: 32px;
+      margin-bottom: 8px;
+    }
+
+    .title p {
+      color: #777;
+    }
+
+    .courses {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .course {
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 5px 20px #0000000d;
+      transition: 0.2s;
+    }
+
+    .course:hover {
+      transform: translateY(-5px);
+    }
+
+    .course .icon {
+      font-size: 40px;
+      margin-bottom: 15px;
+    }
+
+    .course h3 {
+      margin-bottom: 10px;
+    }
+
+    .course p {
+      color: #667085;
+      font-size: 14px;
+    }
+
+    .lesson {
+      background: #172033;
+      color: white;
+      border-radius: 15px;
+      padding: 35px;
+      margin-top: 60px;
+    }
+
+    .lesson h2 {
+      margin-bottom: 15px;
+    }
+
+    .code {
+      background: #0d1117;
+      color: #7dd3fc;
+      padding: 20px;
+      border-radius: 10px;
+      margin-top: 20px;
+      direction: ltr;
+      text-align: left;
+      overflow-x: auto;
+      font-family: monospace;
+    }
+
+    footer {
+      text-align: center;
+      background: white;
+      padding: 25px;
+      color: #777;
+      border-top: 1px solid #eee;
+    }
+
+    @media (max-width: 750px) {
+      header {
+        padding: 15px 20px;
+      }
+
+      nav {
+        display: none;
+      }
+
+      .hero h1 {
+        font-size: 34px;
+      }
+
+      .courses {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="logo">CodeLearn</div>
+
+    <nav>
+      <a href="#home">خانه</a>
+      <a href="#courses">دوره‌ها</a>
+      <a href="#lesson">درس اول</a>
+    </nav>
+  </header>
+
+
+  <section class="hero" id="home">
+
+    <h1>
+      برنامه‌نویسی را
+      <span>یاد بگیر.</span>
+    </h1>
+
+    <p>
+      آموزش ساده و کاربردی برنامه‌نویسی برای کسانی که
+      می‌خواهند از صفر شروع کنند و قدم‌به‌قدم پیش بروند.
+    </p>
+
+    <a href="#courses" class="btn">
+      شروع یادگیری 🚀
+    </a>
+
+  </section>
+
+
+  <section class="container" id="courses">
+
+    <div class="title">
+      <h2>دوره‌های آموزشی</h2>
+      <p>مسیرت را انتخاب کن و شروع کن.</p>
+    </div>
+
+
+    <div class="courses">
+
+      <div class="course">
+        <div class="icon">🌐</div>
+        <h3>HTML</h3>
+        <p>
+          ساختار صفحات وب را از پایه یاد بگیر
+          و اولین سایت خودت را بساز.
+        </p>
+        <a href="#lesson" class="btn">شروع دوره</a>
+      </div>
+
+
+      <div class="course">
+        <div class="icon">🎨</div>
+        <h3>CSS</h3>
+        <p>
+          ظاهر سایت‌ها، رنگ‌ها، فونت‌ها و
+          طراحی ریسپانسیو را یاد بگیر.
+        </p>
+        <a href="#lesson" class="btn">شروع دوره</a>
+      </div>
+
+
+      <div class="course">
+        <div class="icon">⚡</div>
+        <h3>JavaScript</h3>
+        <p>
+          سایت‌های خودت را تعاملی کن و
+          برنامه‌نویسی واقعی را شروع کن.
+        </p>
+        <a href="#lesson" class="btn">شروع دوره</a>
+      </div>
+
+    </div>
+
+
+    <div class="lesson" id="lesson">
+
+      <h2>📚 درس اول: Hello World</h2>
+
+      <p>
+        در HTML می‌توانیم متن را با تگ‌های مختلف
+        داخل صفحه نمایش دهیم.
+      </p>
+
+      <div class="code">
+&lt;h1&gt;Hello World!&lt;/h1&gt;
+
+&lt;p&gt;Welcome to CodeLearn.&lt;/p&gt;
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <footer>
+    © 2026 CodeLearn | ساخته شده برای یادگیری برنامه‌نویسی
+  </footer>
+
+</body>
+</html>
